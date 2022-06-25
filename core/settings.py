@@ -29,7 +29,9 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     'apps.user'
 ]
+
 ECOMMERCE_APPS = []
+
 THIRD_PARTY_APPS = [
     'corsheaders',
     'rest_framework',
@@ -88,10 +90,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
+# DATABASES = {
+#     "default": env.db("DATABASE_URL", default="postgres:///ecommerce_django")
+# }
+# DATABASES["default"]["ATOMIC_REQUESTS"] = True
+
 DATABASES = {
-    "default": env.db("DATABASE_URL", default="postgres:///ecommerce_django")
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 #Cors & Csrf
 CORS_ORIGIN_WHITELIST = [
@@ -134,8 +143,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'es'
+TIME_ZONE = 'America/Bogota'
 USE_I18N = True
 USE_TZ = True
 
