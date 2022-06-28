@@ -89,7 +89,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-# Database
+#Database
 # DATABASES = {
 #     "default": env.db("DATABASE_URL", default="postgres:///ecommerce_django")
 # }

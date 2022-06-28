@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 // Reducer
-import user from './slices/user'
+import auth from './slices/user'
+import alert from './slices/alert'
 
 export default configureStore({
   reducer: {
-    user
+    auth,
+    alert
   }
 });

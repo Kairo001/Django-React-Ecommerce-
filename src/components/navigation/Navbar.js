@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Link } from 'react-router-dom'
+import Alert from '../Alert'
 import {
   BookmarkAltIcon,
   BriefcaseIcon,
@@ -86,6 +87,7 @@ function classNames(...classes) {
 
 export function Navbar() {
   return (
+    <>
     <Popover className="relative bg-white">
       <div className="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true" />
       <div className="relative z-20">
@@ -407,5 +409,7 @@ export function Navbar() {
         </Popover.Panel>
       </Transition>
     </Popover>
+    <Alert/>
+    </>
   )
 }
